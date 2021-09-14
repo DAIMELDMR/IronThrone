@@ -2,12 +2,12 @@ import React from 'react'
 
 const CharacterCard = ({char}) => {
     return (
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
+        <div className="flip-card">
+            <div className="flip-card-inner">
+                <div className="flip-card-front">
                     <img src= {char.imageUrl} alt=""/>
                 </div>
-                <div class="flip-card-back">
+                <div className="flip-card-back">
                     <h1>{char.firstName}</h1>
                     <ul>
                         <li>
