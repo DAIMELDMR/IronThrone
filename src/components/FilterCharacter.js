@@ -6,16 +6,12 @@ const FilterCharacter = () => {
 
 
     return (
-        <div>
-            {window.addEventListener('keydown', event => {
-                //https://keycode.info/  using only alphabethical keys
-                if (event.keyCode > 64 && event.keyCode < 91) {
-                    const l = event.key;
-                    setLetter(l);
-                } else if (event.keyCode === 27) {
-                    window.removeEventListener('keydown', event)
-                }
-            })}
+        <div className="filter">
+            <form>
+                <input type="text" placeholder="Filter Character" value={letter}
+                onChange={(e) => setLetter(e.target.value)}/>
+            </form>
+
         </div>
     )
 }
