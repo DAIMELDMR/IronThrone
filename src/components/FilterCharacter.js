@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const FilterCharacter = ({getName}) => {
+function FilterCharacter({getName}) {
 
     const [letter, setLetter] = useState('')
 

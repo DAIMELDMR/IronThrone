@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CharacterCard = ({char}) => {
+function CharacterCard ({char}) {
     return (
         <div className="flip-card">
             <div className="flip-card-inner">

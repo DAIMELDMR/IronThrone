@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../img/logo.png'
 
-const Header = () => {
+function  Header() {
     return (
         <div>
             <header className="center">

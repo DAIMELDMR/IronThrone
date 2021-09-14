@@ -9,7 +9,6 @@ function App() {
   const [characters, setChar] = useState([]);
   const [name, setName] = useState('');
 
-
   useEffect(() => {
     const getChar = () => {
       axios.get(`https://thronesapi.com/api/v2/Characters?name=${name}`)

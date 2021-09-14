@@ -1,7 +1,7 @@
 import React from 'react'
 import CharacterCard from './CharacterCard'
 
-const Characters = ({characters}) => {
+function Characters({characters}) {
     return (
         <div>
             <section className="cards">
