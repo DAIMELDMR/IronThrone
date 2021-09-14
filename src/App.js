@@ -17,6 +17,7 @@ function App() {
           setChar(res.data);
         })
     }
+    console.log()
     getChar();
 
   }, [])
@@ -24,7 +25,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <FilterCharacter/>
+      <FilterCharacter getName={ (letter) => setName(letter) }/>
       <Characters characters = {characters} />
     </div>
   );

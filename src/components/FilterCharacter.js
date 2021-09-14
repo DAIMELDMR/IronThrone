@@ -1,15 +1,21 @@
 import React, {useState} from 'react'
 
-const FilterCharacter = () => {
+const FilterCharacter = ({getName}) => {
 
     const [letter, setLetter] = useState('')
+
+    const onChange = (value) => {
+        setLetter(value);
+        console.log(letter)
+        getName(letter);
+    }
 
 
     return (
         <div className="filter">
-            <form>
-                <input type="text" placeholder="Filter Character" value={letter}
-                onChange={(e) => setLetter(e.target.value)}/>
+            <form className="form" onSubmit={(e) => onChange(e.target.value)}>
+                <input type="text" placeholder="Filter Character" />
+                <button type="submit" className="btn">Search</button>
             </form>
 
         </div>
