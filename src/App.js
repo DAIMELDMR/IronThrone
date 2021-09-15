@@ -9,6 +9,7 @@ function App() {
   const [characters, setChar] = useState([]);
   const [charFilter, setCharFilter] = useState([])
 
+  //Filter Character fuction
   const filterCharacter = (charName) => {
     if (charName.trim() === '') {
       return setCharFilter([])
@@ -20,7 +21,7 @@ function App() {
       setCharFilter(updatedCharacters)
   }
 
-
+  //The request to the API
   const getChar = () => {
     axios.get(`https://thronesapi.com/api/v2/Characters`)
       .then(res => {
