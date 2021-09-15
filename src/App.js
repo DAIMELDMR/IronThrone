@@ -7,25 +7,36 @@ import FilterCharacter from './components/FilterCharacter';
 
 function App() {
   const [characters, setChar] = useState([]);
-  const [name, setName] = useState('');
+  const [charFilter, setCharFilter] = useState([])
 
-  useEffect(() => {
-    const getChar = () => {
-      axios.get(`https://thronesapi.com/api/v2/Characters?name=${name}`)
-        .then(res => {
-          setChar(res.data);
-        })
+  const filterCharacter = (charName) => {
+    if (charName.trim() === '') {
+      return setCharFilter([])
     }
-    console.log()
-    getChar();
+    const updatedCharacters = characters.filter(char => {
+      const isName = char.firstName.toLowerCase()
+      return isName.startsWith(charName.toLowerCase())
+    })
+      setCharFilter(updatedCharacters)
+  }
+
+
+  const getChar = () => {
+    axios.get(`https://thronesapi.com/api/v2/Characters`)
+      .then(res => {
+        setChar(res.data);
+      })
+  }
+  useEffect(() => {
+    getChar()
 
   }, [])
 
   return (
     <div className="container">
       <Header />
-      <FilterCharacter getName={ (letter) => setName(letter) }/>
-      <Characters characters = {characters} />
+      <FilterCharacter filterCharacter={filterCharacter}/>
+      <Characters characters = {charFilter.length > 0 ? charFilter: characters} />
     </div>
   );
 }
