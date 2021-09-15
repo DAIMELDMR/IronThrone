@@ -8,7 +8,6 @@ function FilterCharacter({filterCharacter}) {
         setLetter(value);
     }
 
-
     return (
         <div className="filter">
             <form className="form" onSubmit={(e) => { e.preventDefault(); filterCharacter(letter)}} >

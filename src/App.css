@@ -33,7 +33,6 @@ header img {
   justify-content: center;
 }
 
-
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -75,8 +74,6 @@ header img {
   transform: rotateY(180deg);
 }
 
-
-
 .flip-card img {
   border-radius: 10%;
   width: 100%;
@@ -104,8 +101,6 @@ header img {
   height: 100px;
 }
 
-
-
 input[type='text'] {
   display: inline-flex;
   align-items: center;
@@ -116,7 +111,6 @@ input[type='text'] {
   width: 60%;
   margin-left: 170px;
   outline: none;
-
 }
 
 .btn {
@@ -131,8 +125,6 @@ input[type='text'] {
   border: 0;
   margin: 10px 0 10px;
 }
-
-
 
 @media (max-width: 800px) {
   .cards {
